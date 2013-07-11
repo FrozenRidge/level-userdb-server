@@ -17,7 +17,7 @@
   ],
   "bin": {
    "level-userdb-server":"index.js"
-  }
+  },
   "author": "Niall O'Higgins",
   "license": "BSD",
   "bugs": {
