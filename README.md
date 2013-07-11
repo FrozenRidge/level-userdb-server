@@ -3,6 +3,8 @@ level-userdb-server
 
 Standalone server for [level-userdb](https://github.com/FrozenRidge/level-userdb).
 
+You can use [level-userdb-dnode](https://github.com/FrozenRidge/level-userdb-dnode) as as client library or the CLI tool [level-userdb-cli](https://github.com/FrozenRidge/level-userdb-cli) to connect to it.
+
 ## Installation
 
 `npm install -g level-userdb-server`
@@ -21,3 +23,7 @@ Options:
   -a, --address   address to listen on       [default: "0.0.0.0"]
   -p, --port      port to listen on          [default: 9998]
 ```
+
+## Todo
+
+Error handling & logging (domains?)
