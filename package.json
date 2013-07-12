@@ -1,6 +1,6 @@
 {
   "name": "level-userdb-server",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Standalone server for level-userdb",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "level-userdb"
   ],
   "bin": {
-   "level-userdb-server":"index.js"
+    "level-userdb-server": "index.js"
   },
   "author": "Niall O'Higgins",
   "license": "BSD",
@@ -24,8 +24,9 @@
     "url": "https://github.com/FrozenRidge/level-userdb-server/issues"
   },
   "dependencies": {
-    "level-userdb-dnode": "~0.1.3",
     "level-userdb": "~0.1.4",
-    "optimist": "~0.6.0"
+    "optimist": "~0.6.0",
+    "bunyan": "~0.21.4",
+    "multilevel": "~4.1.0"
   }
 }

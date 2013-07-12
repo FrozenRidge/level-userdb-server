@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
+var bunyan = require('bunyan');
 var data = require('level-userdb')
-var dnodeServer = require('level-userdb-dnode').server
-var fs = require('fs')
+var domain = require('domain')
+var net = require('net')
+var multilevel = require('multilevel')
 var ui = require('optimist')
   .usage('Usage: $0 -d [database] -a [address] -p [port] ')
   .alias('d', 'database')
@@ -19,13 +21,24 @@ var ui = require('optimist')
 
 var argv = ui.argv
 
+var log = bunyan.createLogger({name: "level-userdb-server"});
+
 if (argv.h) {
   ui.showHelp()
   process.exit(1)
 }
 
-var server = dnodeServer(argv.database)
+var d = domain.create()
+d.on('error', function(err) {
+  log.error(err)
+})
+d.run(function() {
 
-server.listen(argv.address, argv.port)
+  var db = data(argv.database)
+  // Wrap level-userdb with multilevel server
+  net.createServer(function (c) {
+    c.pipe(multilevel.server(db)).pipe(c)
+  }).listen(argv.port, argv.address)
 
-console.log("level-userdb-server listening on %s:%s", argv.address, argv.port)
+  log.info("level-userdb-server listening on %s:%s", argv.address, argv.port)
+})
