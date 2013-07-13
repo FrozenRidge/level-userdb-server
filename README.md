@@ -3,7 +3,7 @@ level-userdb-server
 
 Standalone server for [level-userdb](https://github.com/FrozenRidge/level-userdb).
 
-You can use [level-userdb-dnode](https://github.com/FrozenRidge/level-userdb-dnode) as as client library or the CLI tool [level-userdb-cli](https://github.com/FrozenRidge/level-userdb-cli) to connect to it.
+You can use [multilevel](https://github.com/juliangruber/multilevel) as as client library or the CLI tool [level-userdb-cli](https://github.com/FrozenRidge/level-userdb-cli) to connect to it.
 
 ## Installation
 
