@@ -23,7 +23,3 @@ Options:
   -a, --address   address to listen on       [default: "0.0.0.0"]
   -p, --port      port to listen on          [default: 9998]
 ```
-
-## Todo
-
-Error handling & logging (domains?)
